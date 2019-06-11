@@ -1,0 +1,194 @@
+\documentclass[12pt, authoryear]{elsarticle}
+\makeatletter
+\def\ps@pprintTitle{%
+	\let\@oddhead\@empty
+	\let\@evenhead\@empty
+	\def\@oddfoot{}%
+	\let\@evenfoot\@oddfoot}
+\makeatother
+%\usepackage{lmodern}
+% My spacing
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{multirow}
+%\DeclareMathSizes{12}{14}{10}{10}
+\usepackage[margin=2.5cm]{geometry}    % How to set margins - optimized for 2.5cm      
+
+% See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   			% ... or a4paper or a5paper or ... 
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    			% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}						% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+% TeX will automatically convert eps --> pdf in pdflatex	
+\usepackage{flafter}			
+\usepackage{setspace}
+%\linespread{1.5}
+\usepackage[font={}]{caption}
+\usepackage[bottom]{footmisc}
+\usepackage[capposition=top]{floatrow}   %figure notes
+\usepackage{lscape}
+%math packages 
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx,epsf,subfigure}
+\usepackage{pstricks,pst-node,psfrag}
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage{amsmath,bm}
+
+%mathnotes
+\newcommand{\bbeta}{\mbox{\boldmath $\beta$}}
+\newcommand{\beps}{\mbox{\boldmath $\epsilon$}}
+\newcommand{\bX}{\mbox{\boldmath $X$}}
+\newcommand{\bY}{\mbox{\boldmath $Y$}}
+\newcommand{\bI}{\mbox{\boldmath $I$}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\x}{\textsc{\textbf{x}}}
+\newcommand{\xx}{\textsc{x}}
+
+%add figure 
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{soul}
+\graphicspath{ {figures/} }
+
+
+\def\bibsection{\section{References}} %%% Make "References" appear before bibliography
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{tablefootnote}
+\usepackage{lscape} 
+\usepackage{animate}
+
+\renewcommand{\contentsname}{Table of Contents} % change name from Contents to Table of Contents
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+%_______________________________________________________________________________________________________%
+%_______________________________________________________________________________________________________%
+%\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+%\usepackage{graphicx,multirow}
+\usepackage{xcolor,colortbl}
+\usepackage{xcolor}
+%\usepackage{graphicx,multirow}
+\usepackage[capposition=top]{floatrow}
+\setcounter{secnumdepth}{4}
+\usepackage{tikz}
+\begin{document}
+
+\begin{frontmatter}  %
+
+\title{What are the Trolls up to?}
+
+
+
+\author[Add1]{Jordi Serra}
+\ead{jordi.morera@barcelonagse.eu}
+
+\author[Add1]{Sebastian Wolf}
+\ead{sebastian.wolf@barcelonagse.eu}
+
+\author[Add1]{Felix Adam}
+\ead{felix.adam@barcelonagse.eu}
+
+\address[Add1]{Barcelona Graduate School of Economics, Barcelona, Spain}
+
+\begin{abstract}
+\small{
+Abstract to be written here. 
+}
+\end{abstract}
+
+\vspace{1cm}
+
+\begin{keyword}
+\footnotesize{
+Textmining \sep Russian Interference \sep Polarization  \\ \vspace{0.3cm}
+%\textit{JEL classification} L250 \sep L100
+}
+\end{keyword}
+\vspace{0.5cm}
+\end{frontmatter}
+
+\headsep 35pt % So that header does not go over title
+\section{Introduction}\label{intro}
+
+We analyze russian inteligence agency efforts on social media / twitter
+
+Which strategies are used, which goals are being followed
+
+Focus on polarization 
+
+Discuss the goals of social media campaigns from a geopolitical and strategic point of view, with an eye on polarization 
+
+We then analyse polarization from a social sciences point of view
+
+One of the hard questions is how to counteract against these measures, so first goal should be to identify polarizing tweets
+
+if one can identify these, could help for targeting them from a technical point of view, but also for further analysis, like building polarization index
+
+we make use of a large scale tweet database, whose users are thought to be related to Russian Intelligence agencies 
+
+use textmining techniques to uncover targeted efforts to polarize the discussion 
+
+our findings show that...
+
+the rest of this report is structured as follows
+
+
+
+\section{The Strategy behind Russian Social Media Efforts}\label{literature}
+
+In order to identify efforts to polarize US politics through social media, we need to understand the strategies behind such efforts. In particular, it is crucial to know why Russia would use such strategies, and how they could potentially influence domestic and foreign politics in the US. 
+
+Unlike the predicted "End of History", (\cite{fukuyama1989end}) conflicts between liberal democracies in the west and Russia reemerged in the beginning of the 21st century. Following the fall of the Soviet Union, instead of integrating into the West, Russia tried to reestablish it's position as a superpower. Issues like the NATO integration of eastern European countries or the establishment of a missile defense shield in easter Europe lead to rising tensionsand mistrust of Russian leaders towards the West (sources). These tensions became more pronounced in the beginning of the second decade of the 21st century, with hot conflicts in the middle East, most notably Syria, and the Maidan Revolution in Ukraine. At the heart of these conflicts were and still are diverging interests of the United States and Russia. Be it the integration of the Ukraine into the European Union (EU) and NATO or the Russian support for the Syrian leader Assad. These points of conflict can be seen as a motivator for the Russian interference in the 2016 elections. 
+
+In the aftermath of the 2016 elections, the US intelligence community published a number of assessments of the Russian strategy. Most notably, the Central Intelligence Agency (CIA), the Federal Bureau of Investigation (FBI) and the National Security Agency (NSA) pusblished an assessment of Russian activities, stating that the goals of Russia were to weaken public faith in the US democratic process and denigrate Hillary Clinton (\cite{office2017assessing}). The idea behind these efforts was to undermine the US-led liberal democratic oder, posing a threat to Putin's regime. In particular, Putin saw a potential presidency of Hillary Clinton as a threat to his ambitions in Ukraine and Syria, due to Clinton's foreign policy positions as Secretary of State. Trump on the other hand was seen more friendly towards Russia and thus favoured over Clinton. As part of these efforts, Russia used social media networks like Facebook and Twitter, to promote radical disconntent with US politics, polarize the discussion and denigrate Hillary Clinton. The report further states, that the Russian strategy changed over time. In the beginning, the goal was to undermine public institutions. However, with Clinton leading over Trump, the Russian efforts shifted towards the defamation of Clinton, trying to harm her elactability and potential presidency. Interestingly, the report states that after Trump had won, the efforts to undermine public institutions stopped. The three intelligence agencies pick out the so called Internet Research Agency (IRA), as one of the main sources of these social media accounts. The IRA is described as a private agency with ties to the Russian government, engaging in targeted social influence efforts.
+The findings of the so called Mueller investigation (\cite{mueller2019report}) support this assessment. According to the Mueller Report, the IRA carried out social media campaigns to amplify social discord in the US. In order to do so, Twitter accounts linked to the IRA tweeted on divisive US political and social issues, such as illegal immigration and racial injustice. Acorrding to \cite{mueller2019report}, the IRA used social media accounts in two manners. Some accounts were designed around fictitious US personas, posting original content on divisive topics, promoting radical ideas and denigrating or promoting political candidates. Other accounts weren't used for original content, but rather to promote and amplify the impact of the "original" content. Some of the  accounts posting such content had a large follower share, such as \@TEN\_GOP, an account pretending to be related to the Tenesse Republican Party. \@TEN\_GOP was clearly used to promote polarization by pushing extrem content and promoting Donald Trump. Some tweets included:  
+
+\begin{itemize}
+
+\item "White girl burned alive by Black gang members  They should pay! Why media remains silent?"
+
+\item "Wake up America before it's too late! Europe has already lost its chance!  \#BanIslam \#StopIslam \#filibuster"
+
+\item "Donald Trump: "I will be the greatest jobs-producing president that God ever created"
+
+\end{itemize}
+
+The strategy clearly worked, since tweets of the IRA we're picked up by major news outlets in the US and thus shaped at least daily discussions (\cite{mueller2019report}). We can thus summarize the Russian strategy as follows: Polarize the political discussion in the US, undermine Clintons authority and electability and promote Trump. 
+
+Now the question remains how these strategies, if succesful, would effect US foreign policy, in particular towards Russia. In the subsequent analysis, we'll focus on the idea of polarization. \cite{fiorina2008political} define polarization as the simultaneous presence of opposing or conflicting principles, tendencies or points of view. In a quantitative manner, polarization can be seen as an increase of variance of ideas and attitudes towards poltical questions. \cite{dimaggio1996have} argue, that this reduces the probability of group formation at the center of the political spectrum and increases the formation of groups with irreconcilable preferences. This can have peculiar effects on domestic and foreign policy. \cite{beinart2008politics} argues that polarization leads to a weakend international position of the US. First, international endavours such as the promotion of trade agreements, UN resolutions or even military campaigns crucially depend on domestic support. Without domestic support, international allys of the US discount promises, while the US appears weak towards enemies \citep{beinart2008politics}. \cite{schultz2017perils} supports these findings. He argues that domestic political polarization leads to three issues. First, it is more difficult to get bipartisan support for risky undertakings. Second, it gets harder to agree on lessons from failures, complicating efforts to learn. And lastly, the risk of dramatic policy swings complicates the ability to make long term commitments. The overall effect of polarization can thus be summarised as follows: A polarized society is caught up with fighting against itself. It can't 
+reconcile large differences to find a common foreign policy strategy. 
+
+Consequently, Russias global standing would greatly increase from a polarization of US politics. Actually, we can already see these effects in motion, especially in Syria. The US failed to gather international support for UN resolutions and seems to have no clear strategy, while Russia continues pushing its ally Assad \citep{bolan_2019}. Interestingly, the other strategies described by Martin and Shapiro, such as defamation and persuasion can also be seen as tools of polarization. 
+
+Having discussed the effects of polarization, we can now try to identify Russian polarization efforts through social media. 
+
+\section{Data}
+
+Discuss the data here and how it can help us to identify polarization efforts.
+
+\section{Methodology}
+
+\section{Results}
+
+\section{Discussion}
+
+ 
+%_______________________________________________________________________________________________________%
+%BIBLIOGRAPHY
+%_______________________________________________________________________________________________________%
+\pagebreak
+\bibliographystyle{agsm}
+\setcitestyle{authoryear}
+\bibliography{textmining}
+
+
+\end{document}

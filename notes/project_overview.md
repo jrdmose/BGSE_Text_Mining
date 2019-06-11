@@ -46,12 +46,12 @@ Idea I would like to focus on:
 Struggle for power between US and Russia
 What are the Russian rationals behind using such techniques?
 How could the influence politics?
-Is there overall strategy behind the use of all 5? -> Weaken US, allows Russia to shift policy efforts, see Middle East (Syria) and Ukraine. US mostly held up with domestic poilitics nowadays.
+Is there overall strategy behind the use of all 5? -> Weaken US, allows Russia to shift policy efforts, see Middle East (Syria) and Ukraine. US mostly held up with domestic politics nowadays.
 Clear challenge to Clinton.
 Undermine the public discussion in general, hinder a constructive discussion
 
 Way to go:
-- Go through each of the 5 strategies, try to come up with a sensible theory why they could be used by russia
+- Go through each of the 5 strategies, try to come up with a sensible theory why they could be used by Russia
 
 ### Short Summaries of Literature provided by Hannes / Nandan
 
@@ -189,7 +189,71 @@ Next Steps: Find support for these claims in
 (a) Reports on geopolitics and Russian strategy.
 (b) Find academic support for effects of polarization, distrust in institutions on political decision making, ability of countries to function.
 
+### Literature on Polarization
 
+What is polarization and how does it affect political decision making?
+
+- Divergence of political attitudes to ideological extremes
+- Especially important in two party system like the US, moderate opinions lose power and influence
+- Implications are not entirely clear, but it alters political process and political composition of general public
+- Most importantly in political decision making, causes increased gridlock and partisanship, at cost of quality and quantity of passed legislation
+- Therefore, polarization hamper transparency, oversight and government's ability to handle long-term issues
+- Political polarization can undercut agreement on foreign policy and harm the international standing
+- Divisiveness on foreign affairs strengthens enemies, discourages allies and destabilizes a nations determination
+- When US conducts relations abroad and appears divided, allies are less likely to trust promises, enemies are more likely to predict weaknesses and uncertainty as to the country's position in world affairs rises
+- Second, elite opinion has a significant impact on the publics perception and understanding of foreign policy, a field where Americans have less prior knowledge to rely on
+
+#### DiMaggio - Have American Social Attiudes become more polarized?
+
+#### Fiorina, Morris P.; Abrams, Samuel J. (1 June 2008). "Political Polarization in the American Public"
+- Polarization narrative prominent in 2000 and 2004 elections
+- Notorious red blue map of the US is actually not that old! Started in 2000
+- focus on polarization in the mass public
+- In US politics, polarization if often described as bimodal distribution of political views, with two modes lying at the extremes
+- Argue that it's not entirely clear how to measure polarization
+- Sorting has occurred alongside party lines and religion
+
+#### Jones - Party Polarization and Legislative Gridlock
+- Finds that higher party polarization increases the likelihood of encountering gridlock on a given proposal
+- Divided government itself does not cause gridlock
+- However, higher party polarization increases gridlock
+- Unified government is just as prone to gridlock as a divided government when parties are highly polarized and neither party has a large majority
+- Divided government is just as productive as unified government when party polarization
+
+
+#### Schultz - Perils of Polarization for US Foreign Policy
+- threat for US standing in the world comes from within
+- Issue of partisan polarization
+- Polarization of ideological positions of political elites
+- Mentions affective polarization and negative partisanship: Distrust and dislike from the other party, making agreement harder
+- Discusses three challenges stemming from polarization to US public Policy
+- More difficult to get bipartisan support for ambitious or risky undertaking, particularly the use of military force and the conclusion of treaties
+- Hard to agree across parties on the lessons of foreign policy failure, complicating efforts to learn and adapt
+- Risk of dramatic policy swings complicates ability to make long term commitments
+- Overall vulnerability to foreign intervention in political system
+
+#### McCormick and Wittkopf - Bipartisanship, Partisanship and Ideology in Congressional-Executive Foreign Policy Relations
+- View of foreign policy after Vietnam war and as a product of partisan and ideological discord
+- There used to a belief that "politics stops at the waters edge"
+- Authors try to find out whether this is the case or not
+
+#### Beinart, Peter (2008). "When Politics No Longer Stops at the Water's Edge: Partisan Polarization and Foreign Policy". In Pietro S. Nivola & David W. Brady (ed.). Red and blue nation? Volume Two: Consequences and Correction of America's Polarized Politics. Washington, DC: Brookings.
+- chief problem with polarization is its effect on America's foreign and military Policy
+- when US engages as an enemy or friend abrad, chances of success are heightend by coherent political support at home
+- when nation appears divided, friends discount promises and enemies anticipate weaknesses
+- this is what happend in Vietnam
+- American people are heavily influenced by elite opinion on matters about which they are personally uninformed
+- Elite views can be very influential when it comes to foreign and military policy
+
+### Unifying literature and Russian Intelligence Efforts
+- Social science literature supports the findings from US intelligence reports
+- also argues that polarization can greatly harm political decision making and thus position of US as a global superpower, unable to continue to project force anywhere
+- How can Russia try to polarize the US debate?
+- Use the strategies discussed by Shapiro and Martin
+- Push extreme views on both ends of the political spectrum
+- Hoping for large coverage or impact
+- Amplified by US media system
+- Picking up divisive topics for maximization of viewer numbers
 
 ### Data
 https://about.twitter.com/en_us/values/elections-integrity.html
