@@ -8,7 +8,8 @@ def plot_wordcloud(words):
     wordcloud = WordCloud(width = 800, height = 600,
                     background_color ='white',
                     max_words = 100,
-                    min_font_size = 10).generate(words)
+                    min_font_size = 10,
+                    regexp = r"\w+").generate(words)
 
     # plot the WordCloud image
     plt.figure(figsize = (8, 8), facecolor = None)
