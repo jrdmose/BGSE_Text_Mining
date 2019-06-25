@@ -54,7 +54,7 @@
 \usepackage{hyperref}
 \usepackage[round]{natbib}
 \usepackage{soul}
-\graphicspath{ {figures/} }
+\graphicspath{ {../img/} }
 
 
 \def\bibsection{\section{References}} %%% Make "References" appear before bibliography
@@ -87,15 +87,14 @@
 \title{What are the Trolls up to?}
 
 
+\author[Add1]{Felix Adam}
+\ead{felix.adam@barcelonagse.eu}
 
 \author[Add1]{Jordi Serra}
 \ead{jordi.morera@barcelonagse.eu}
 
 \author[Add1]{Sebastian Wolf}
 \ead{sebastian.wolf@barcelonagse.eu}
-
-\author[Add1]{Felix Adam}
-\ead{felix.adam@barcelonagse.eu}
 
 \address[Add1]{Barcelona Graduate School of Economics, Barcelona, Spain}
 
@@ -119,29 +118,13 @@ Textmining \sep Russian Interference \sep Polarization  \\ \vspace{0.3cm}
 \headsep 35pt % So that header does not go over title
 \section{Introduction}\label{intro}
 
-We analyze russian inteligence agency efforts on social media / twitter
+In this report we analyze efforts by the Russian Internet Research Agency (IRA) to polarize the American public on social media / twitter in the context of the 2016 presidential election. The two front-running candidates in the 2016 election bore starkly different promise for the Russian government. Whereas Hillary Clinton had already built her profile as strongly critic of Russian foreign policy during her tenure as Secretary of State, Donald Trump offered the opportunity for Russia to push American politics into a more favorable space for Russian interests. In the recently published Mueller report it has been alleged that by polarizing the American society, the Russians attempted to aid Trump's election. Given Trump's more radical policy positions, it was likely easier for Trump to increase his vote at the extremes of the political spectrum than at the centre, and polarization would therefore have been helpful for his election. Polarization might also have been a goal of the Russians in and of itself, by weakening American influence in world politics, and lowering faith in democratic vs autocratic political systems.
 
-Which strategies are used, which goals are being followed
+Any democratic government has a strong interest in counteracting such foreign interference in the national debate that can destabilise the democratic process. Therefore, there is strong policy justification for research into measures that help to identify polarization in twitter data. In this report, we attempt to do just that. We study a dataset of nearly 3 million tweets by user accounts linked to the IRA and use textmining techniques to uncover targeted efforts to polarize the discussion. To identify polarization, we propose to study the clusteredness of tweets projected onto a vector space created using a word embedding algorithm. We consider a corpus to contain polarizing tweets if the clusters that we find feature data points that have strong similarity within and low similarity across clusters. We measure this similarity using cosine distance of the word embedding vectors, and take the average pairwise distance between clusters as an aggregate measure for polarization. 
 
-Focus on polarization 
+We acknowledge that clusters in our dataset cannot be expected to be perfectly separated, or bunched into a specific number of clusters. To build up credibility among the American public, IRA tweets needed to build a history of realistic tweets to increase followers and be taken seriously. We hence expect the dataset to feature a lot of noise, but still show larger across-cluster distance than the average Twitter corpus. In our empirical analysis, we study polarisation as evidenced by clusteredness both for the corpus as a whole and for individual topics as identified by hashtags. Our results show that XXXXXX
 
-Discuss the goals of social media campaigns from a geopolitical and strategic point of view, with an eye on polarization 
-
-We then analyse polarization from a social sciences point of view
-
-One of the hard questions is how to counteract against these measures, so first goal should be to identify polarizing tweets
-
-if one can identify these, could help for targeting them from a technical point of view, but also for further analysis, like building polarization index
-
-we make use of a large scale tweet database, whose users are thought to be related to Russian Intelligence agencies 
-
-use textmining techniques to uncover targeted efforts to polarize the discussion 
-
-our findings show that...
-
-the rest of this report is structured as follows
-
-
+In the second section of this report, we clarify the likely political motivation of the Russian government to engage in a polarization strategy. The third section introduces our methodology. The fourth section describes the data and our pre-processing steps. The fifth section reports the results, and the sixth section discusses our conclusions.
 
 \section{The Strategy behind Russian Social Media Efforts}\label{literature}
 
@@ -181,14 +164,153 @@ To measure the level of clustering, we propose to use the average cosine distanc
 The space that we measure the cosine distance in can be defined by any projection of the corpus of tweets onto a vector space, such as a simple term frequency encoding. For this report, we use the Word2Vec package to embed our tweets based on the combination of words used in the tweets. Word2Vec uses a simple two layer neural network that is trained to predict the context a certain word, or a combination of words is most likely to appear in. We train Word2Vec using the full corpus, and then use the vector representations of tweets predicted by the model to measure cosine similarity.
 
 \section{Data}
-Discuss the data here and how it can help us to identify polarization efforts.
+To identify efforts by Russia to polarize public opinion on social media ahead of the 2016 US presidential election, we make use of a dataset of nearly 3 million tweets by 3077 different English-language user accounts linked to the Internet Research Agency and made publicly available by Twitter covering several years leading up to and after the election period.
 
-To identify efforts by Russia to polarize public opinion on social media ahead of the 2016 US presidential election, we make use of a dataset of X tweets linked to the Internet Research Agency and made publicly available by Twitter covering the time period XX-XX. 
+\subsection{Data preprocessing}
+    
+Preprocessing of the tweet corpus is of capital importance when using natural language processing techniques where different approaches in text cleaning/filtering can lead to starkly different results during model training. In this section we are going to describe and justify the steps we followed to clean our data.
+    
+\subsection{Filtering}
+
+In the data set, we find tweets in different alphabets: latin, cyrillic and arabic. The first step we take is to remove all tweets that do not use the latin alphabet. We keep English tweets only. Besides not being able to extract any meaning from other alphabets without translation, having different languages/alphabets in the corpus can lead to wrong algorithm output and false vocabularies. Further, since the main target is to show the polarization caused by these tweets in the American society, we believe English is the most relevant language for this objective. We also drop users that have reported a non US location and/or that don't have their user description or account language in English. Supposedly, having any of the features described above would look suspicious to the "true" American users who these accounts aimed to influence leading to counterproductive effects. After removing all these tweets from our data, we keep roughly 85\% of the original data set, which means 2.5 million tweets.
+
+\subsection{Cleaning}
+
+Tweets are usually data dirty: punctuation signs are used to structure the tweet, urls, retweets, hashtags and emojis are frequent. Cleaning of symbols that cannot be used to convey meaning in the embedding algorithm is key to obtain sensible results. We proceed by removing mentions, retweets, urls, breaklines and  blank spaces. A question that arises when analysing tweets is what to do with emojis. Generally speaking, emojis can be difficult to process but they carry important information about the tweet. In our case, after some preliminary results, we find that emojis don't help much on identifying polarization and, therefore, we removed them from our corpus.
+
+Another important cleaning decision regards hashtags. Hashtags provide useful information for identifying the topic and a user's opinion about that topic. Since we want to identify polarized information, we believe that these hashtags yield important information in identifying polarization, so we keep them as hashtags in the corpus.
+
+\subsection{Further preprocessing}
+
+A classical approach for data cleaning in text-mining is to follow the Stop Words - Stem - Lemmatize - Tokenize pipeline. However, in the case of short texts such as tweets, some recent contributions \cite{preprocessing} have argued that lemmatization and stemming lead to worse performance in terms of sentiment analysis, while feature reservation, negation transformation and repeated letters normalization improves it. Other references such as \cite{Hollink2004} support the view that lemmatizing and stemming does not improve performance of the algorithms significantly. One has to keep in mind that any morphological pre-processing of the training data reduces the amount of information that model can obtain from the corpus, which can create unnecessary noise making some sentences ambiguous. Therefore, since there is no clear evidence that we can improve performance using lemmatization and stemming, we prefer not to add this layer of complexity to the problem and stick to the cleaned tokenized raw data. 
+
+\subsection{Data exploration}
+    
+According to \cite{mueller2019report} Russia deployed a complex strategy to influence American elections through an army of troll tweeter accounts. Our hypothesis is that this was done via three main channels: politically active users, fake news accounts and bot accounts. We will call the first two channels the content providers and the third channel the content amplifier. The politically active accounts are well identified in the reports by the American intelligence agencies and also by their user descriptions. The news providers consist in a few number of users that attempted to impersonate local news agencies and spread both true and fake news. The idea behind is that, in order to get a loyal audience, they had to build up credibility providing real news for a wide range of topics. However, among these "innocent" news they also published tweets with highly polarizing socio-political content. These content provision interventions appear to then have been complemented using bot twitter users to amplify the content from content providers via retweets. 
+
+\subsection{Content creators vs content amplifiers}
+
+In order to verify the underlying phenomena introduced previously we plotted the percentage of retweets per user in figure \ref{retweets:1}. We find that there is a clear separation of roles: the amplifier is a user with a high percentage of retweets only retweets information from other users whereas the content creator is a user with low percentage only creates content.
+
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{retweets}
+\centering
+\caption{Retweet ratios}
+\label{retweets:1}
+\end{figure}
+
+In the upper right corner of figure  \ref{retweets:1}, we see a high concentration of users that, although having a large total number of tweets, hardly ever produce any content. On the other extreme we have users that produce a reasonable amount of original content tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day!
+
+We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
+
+As an exploratory step, we have checked the content providers' most frequent used words. In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about. Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+Jenn\_Abrams	&	0.0231\\
+SouthLoneStar	&	0.0375\\
+USA\_Gunslinger&	0.0770\\
+patriototus		&	0.0033\\
+redlanews		&	0.0038\\
+ \hline
+\end{tabular}
+\caption{'Right' cluster retweet ratios among content providers}
+\label{table:1}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+BleepThePolice &   0.6768 \\
+Blk\_Voice       &  0.0163 \\
+KaniJJackson   &   0.2655 \\
+LaChristie  &      0.0986 \\
+gloed\_up       &   0.4606 \\
+wokeluisa     &    0.0822 \\
+ \hline
+\end{tabular}
+\caption{'Left' cluster retweet ratios among content providers}
+\label{table:2}
+\end{table}
+\end{center}
+
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud2}
+\centering
+\caption{Wordcloud for 'right' cluster}
+\label{wordcloud:1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud1}
+\centering
+\caption{Wordcloud for 'left' cluster}
+\label{wordcloud:2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud3}
+\centering
+\caption{Wordcloud for news providers}
+\label{wordcloud:3}
+\end{figure}
+
 
 \section{Results}
 
-\section{Discussion}
 
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+donald   &  0.896358\\
+trumps   &  0.791140\\
+pres   &  0.770282\\
+feedly   &  0.762091\\
+illegitimate  &   0.755011\\
+president   &  0.742422\\
+trum   &  0.736769\\
+administration  &   0.728688\\
+donaldtrump   &  0.728006\\
+rnc   &  0.725931\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Trump}
+\label{table:5}
+\end{table}
+\end{center}
+
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+hillary   &  0.935136\\
+hillaryclinton   &  0.783674\\
+clintons &    0.781306\\
+hrc   &  0.765259\\
+campaign  &   0.741458\\
+sanders  &  0.738335\\
+emails   &  0.724602\\
+crookedhillary    & 0.723004\\
+hillarys   &  0.721376\\
+billclinton  &   0.717722\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Clinton}
+\label{table:6}
+\end{table}
+\end{center}
+
+\section{Discussion}
  
 %_______________________________________________________________________________________________________%
 %BIBLIOGRAPHY
@@ -197,6 +319,142 @@ To identify efforts by Russia to polarize public opinion on social media ahead o
 \bibliographystyle{agsm}
 \setcitestyle{authoryear}
 \bibliography{textmining}
+
+
+\section{Annex}
+
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ l l } 
+Twitter user name & User description \\
+ \hline
+USA\_Gunslinger &	Truth is strong, and sometime or other will prevail! \\
+SouthLoneStar	& Proud TEXAN and AMERICAN patriot \#2a \#prolife \\
+& \#Trump2016 \#TrumpPence16 Fuck Islam and PC. \\
+& Don't mess with Texas! \\
+patriototus	Being & patriotic means love or devotion to your homeland \\
+& and readiness to defend it from any harm. United we stand, \\
+& divided we fall. Conservative politics. \#PJNet \\
+redlanews	& Conservative; Right and proud; Christian. Love my \\
+& country and will stand against liberals and socialists. \\
+Jenn\_Abrams &	Calm down, I'm not pro-Trump. I am pro-common sense. \\
+& Any offers/ideas/questions? DM or email me \\
+& jennnabrams\@gmail.com (Yes, there are 3 Ns) \\
+ \hline
+\end{tabular}
+\caption{'Right' cluster profile descriptions}
+\label{table:3}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ l l } 
+Twitter user name & User description \\
+ \hline
+Blk\_Voice & 	Activist. Feminist. Celebrating and highlighting Black excellence. \\
+KaniJJackson &	Follow the example set by Mrs Obama; peace, love, acceptance \\
+&  \& vigilance \#Impeach45 \#Resist \#GunReformNow \\
+LaChristie	& Progressive. Activist. Warrior. Inspiration. \#Resistance \\
+gloed\_up &	No black person is ugly \#BRONZE \#BlackLivesMatter \\
+&  \#BlackToLive \\
+BleepThePolice	 & For a second at least, I'm resurrecting the peace \#Blacktivist \\ 
+& \#BlackLivesMatter \\
+wokeluisa	& APSA. \#Blackexcellence. Political science major \\
+ \hline
+\end{tabular}
+\caption{'Left' cluster profile descriptions}
+\label{table:4}
+\end{table}
+\end{center}
+
+
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud4}
+\centering
+\caption{Wordcloud 4}
+\label{wordcloud:4}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud5}
+\centering
+\caption{Wordcloud 5}
+\label{wordcloud:5}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud6}
+\centering
+\caption{Wordcloud 6}
+\label{wordcloud:6}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_liberals_conservatives}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_clinton_trump}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_black_white}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:3}
+\end{figure}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+liberallogic   &  0.760208 \\
+nutshell   &  0.755933 \\
+liberals   &  0.723288\\
+msm   &  0.703458\\
+hypocrisy  &   0.688949\\
+communist  &   0.687983\\
+leftists  &   0.671862\\
+suppoers    & 0.671141\\
+libs   &  0.670767\\
+gopdebatesc   &  0.668273\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Liberal}
+\label{table:7}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+republican    & 0.736253 \\
+conservatives    & 0.693829\\
+scprimary &    0.680811\\
+ gop   &  0.673089\\
+oppose   &  0.669254\\
+cruz  &   0.656088\\
+democratic  &   0.655370\\
+democrats   &  0.654107\\
+ convention  &   0.653456\\
+endorses  &   0.648152\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Conservative}
+\label{table:8}
+\end{table}
+\end{center}
 
 
 \end{document}
