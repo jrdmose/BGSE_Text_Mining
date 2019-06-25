@@ -201,44 +201,27 @@ In order to verify the underlying phenomena introduced previously we plotted the
 
 In the upper right corner of figure  \ref{retweets:1}, we see a high concentration of users that, although having a large total number of tweets, hardly ever produce any content. On the other extreme we have users that produce a reasonable amount of original content tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day!
 
-We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
+We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below, already classified by left-wing/right-wing partisans. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
 
-As an exploratory step, we have checked the content providers' most frequent used words and produced wordclouds for them (see Annex). In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about. Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use
+As an exploratory step, we have checked the content providers' most frequent used words and produced wordclouds for them (see Annex). In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about.  Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use.
 
-\begin{center}
-\begin{table}[H]
-\begin{tabular}{ c c } 
-Twitter user name & Retweet ratio \\
- \hline
-Jenn\_Abrams	&	0.0231\\
-SouthLoneStar	&	0.0375\\
-USA\_Gunslinger&	0.0770\\
-patriototus		&	0.0033\\
-redlanews		&	0.0038\\
- \hline
-\end{tabular}
-\caption{'Right' cluster retweet ratios among content providers}
-\label{table:1}
-\end{table}
-\end{center}
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{tweet_rep}
+\centering
+\caption{Repeated tweets}
+\label{retweets:2}
+\end{figure}
 
-\begin{center}
-\begin{table}[H]
-\begin{tabular}{ c c } 
-Twitter user name & Retweet ratio \\
- \hline
-BleepThePolice &   0.6768 \\
-Blk\_Voice       &  0.0163 \\
-KaniJJackson   &   0.2655 \\
-LaChristie  &      0.0986 \\
-gloed\_up       &   0.4606 \\
-wokeluisa     &    0.0822 \\
- \hline
-\end{tabular}
-\caption{'Left' cluster retweet ratios among content providers}
-\label{table:2}
-\end{table}
-\end{center}
+
+\subsection{Repeated tweets}
+Deepening into tweet text exploration we perceived identical tweets from different users that have not been retweeted. In other words, different users posted the exact same text several times. In figure \ref{retweets:2} we plotted the distribution of how many repetitions we have from a tweet excluding retweets. We see a high concentration of repeated tweets below 50 repetitions and then a small concentration again around 250 repetitions.A first look at the twee text suggests that more frequent tweets seem to be talking about self-aid and motivation sentences whereas the less frequent tweets seem to be news repeated by the news providers.
+
+A possible explanation for this scenario is that content amplifiers or bots don't have a retweet ratio of exactly 0. Which means that, at some point, this bots have "created" some content. Therefore, they make use of a pool of motivation sentences to "create" tweets so they don't arouse suspicion.
+This is a particularly notable results since the repeated tweets are almost 30\% of the "original" created content.
+
+\subsection{Hashtags}
+As explained previously, hashtags are relevant when analysing tweeter data since they perform as a good proxy for the topic of tweet. In figure \ref{wordcloud:4} and \ref{wordcloud:5} we plot most repeated hashtags among all the available data for left and right partisans. In general, users with different political convictions don't share hashtags. This is because, usually, a hashtag has inherently a political belief behind and using it presuppose that the user is in favor of that belief. There is one particular exception with the hashtag "BlackLivesMatter" which is relevant in both groups. Apart from that, we do no see any other important information for our study.
+
 
 \section{Results}
 
@@ -300,6 +283,41 @@ billclinton  &   0.717722\\
 
 
 \section{Annex}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+Jenn\_Abrams	&	0.0231\\
+SouthLoneStar	&	0.0375\\
+USA\_Gunslinger&	0.0770\\
+patriototus		&	0.0033\\
+redlanews		&	0.0038\\
+ \hline
+\end{tabular}
+\caption{'Right' cluster retweet ratios among content providers}
+\label{table:1}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+BleepThePolice &   0.6768 \\
+Blk\_Voice       &  0.0163 \\
+KaniJJackson   &   0.2655 \\
+LaChristie  &      0.0986 \\
+gloed\_up       &   0.4606 \\
+wokeluisa     &    0.0822 \\
+ \hline
+\end{tabular}
+\caption{'Left' cluster retweet ratios among content providers}
+\label{table:2}
+\end{table}
+\end{center}
 
 
 \begin{center}
