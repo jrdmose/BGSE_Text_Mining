@@ -118,9 +118,13 @@ Textmining \sep Russian Interference \sep Polarization  \\ \vspace{0.3cm}
 \headsep 35pt % So that header does not go over title
 \section{Introduction}\label{intro}
 
-In this report we analyze efforts by the Russian Internet Research Agency (IRA) to polarize the American public on social media / twitter in the context of the 2016 presidential election. The two front-running candidates in the 2016 election bore starkly different promise for the Russian government. Whereas Hillary Clinton had already built her profile as strongly critic of Russian foreign policy during her tenure as Secretary of State, Donald Trump offered the opportunity for Russia to push American politics into a more favorable space for Russian interests. In the recently published Mueller report it has been alleged that by polarizing the American society, the Russians attempted to aid Trump's election. Given Trump's more radical policy positions, it was likely easier for Trump to increase his vote at the extremes of the political spectrum than at the centre, and polarization would therefore have been helpful for his election. Polarization might also have been a goal of the Russians in and of itself, by weakening American influence in world politics, and lowering faith in democratic vs autocratic political systems.
+In this report we analyze efforts by the Russian Internet Research Agency (IRA) to polarize the American public on social media / twitter in the context of the 2016 presidential election. The 2016 election featured two candidates that bore starkly different promise for the Russian government. Whereas Hillary Clinton had already built her profile as a strong critic of Russian foreign policy during her tenure as Secretary of State, Donald Trump offered the opportunity for Russia to push American politics into a more favorable space for Russian interests. The topic has caused a lot of controversy in American politics over the last two years. Recently, the finally released, heavily redacted Mueller report has rekindled the debate, and provided evidence that Russia did indeed attempt to aid Trump's election, as had already been alleged by many political observers. Polarization likely played an important role in Russia's strategy to do so. Given Trump's more radical policy positions, a polarized society can be expected to play in his advantage, allowing him to increase his vote at the extremes of the political spectrum. Polarization might also have been a goal of the Russians in and of itself, by weakening American influence in world politics, and lowering faith in democratic vs autocratic political systems.
 
+<<<<<<< HEAD
 Any democratic government has a strong interest in counteracting such foreign interference in the national debate that can destabilise the democratic process. Therefore, there is strong policy justification for research into measures that help to identify polarization in twitter data. In this report, we attempt to do just that. We study a dataset of nearly 3 million tweets by user accounts linked to the IRA and use textmining techniques to uncover targeted efforts to polarize the discussion. To identify polarization, we propose to study the clusteredness of tweets projected onto a vector space created using a word embedding algorithm. We consider a corpus to contain polarizing tweets if the clusters that we find feature data points that have strong similarity within and low similarity across clusters. We measure this similarity using cosine distance of the word embedding vectors, and take the average pairwise distance between clusters as an aggregate measure for polarization. TO BE ADAPTED TO WHAT HAS BEEN DONE
+=======
+Any democratic government has a strong interest in counteracting such foreign interference in the national debate that can destabilise the democratic process. Therefore, there is strong policy justification for research into measures that help to identify polarization in twitter data. In this report, we attempt to do just that. We study a dataset of nearly 3 million tweets by user accounts linked to the IRA and use textmining techniques to uncover targeted efforts to polarize the national debate. To identify polarization, we propose to study the clusteredness of tweets. To do so, we project tweets onto a vector space created using a word embedding algorithm. We consider a corpus to contain polarizing tweets if the clusters that we find feature data points that have strong similarity within and low similarity across clusters. We measure this similarity using cosine distance of the word embedding vectors, and take high average pairwise distance between clusters and low average distance within clusters as a sign for polarization.
+>>>>>>> e3300d598688800e453f80387e2690b3e58b39ca
 
 We acknowledge that clusters in our dataset cannot be expected to be perfectly separated, or bunched into a specific number of clusters. To build up credibility among the American public, IRA tweets needed to build a history of realistic tweets to increase followers and be taken seriously. We hence expect the dataset to feature a lot of noise, but still show larger across-cluster distance than the average Twitter corpus. In our empirical analysis, we study polarisation as evidenced by clusteredness both for the corpus as a whole. Our results show that XXXXXX
 
@@ -197,12 +201,13 @@ In order to verify the underlying phenomena introduced previously we plotted the
 \label{retweets:1}
 \end{figure}
 
-In the upper right corner of figure  \ref{retweets:1}, we see a high concentration of users that, although having a large total number of tweets, hardly ever produce any content. On the other extreme we have users that produce a reasonable amount of original content tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day!
+In the upper right corner of figure \ref{retweets:1}, we see a high concentration of users that, despite having a large total number of tweets, hardly ever produce any content. On the other extreme we have users that produce a reasonable amount of original content tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day! The plot also features some interesting 'curves' that make up perfect lines. This appears like clear evidence for bots created 'at scale' with varying retweet percentages programmed using a specified retweet/total tweet function.
 
-We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
+We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} in the Annex, already classified by left-wing/right-wing partisans. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
 
-As an exploratory step, we have checked the content providers' most frequent used words. In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about. Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use
+As an exploratory step, we have checked the content providers' most frequent used words and produced wordclouds for them (see Annex). In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about.  Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use.
 
+<<<<<<< HEAD
 \begin{center}
 \begin{table}[H]
 \begin{tabular}{ c c }
@@ -240,28 +245,26 @@ wokeluisa     &    0.0822 \\
 
 \begin{figure}[H]
 \includegraphics[width=4in]{wordcloud2}
+=======
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{tweet_rep}
+>>>>>>> e3300d598688800e453f80387e2690b3e58b39ca
 \centering
-\caption{Wordcloud for 'right' cluster}
-\label{wordcloud:1}
+\caption{Repeated tweets}
+\label{retweets:2}
 \end{figure}
 
-\begin{figure}[H]
-\includegraphics[width=4in]{wordcloud1}
-\centering
-\caption{Wordcloud for 'left' cluster}
-\label{wordcloud:2}
-\end{figure}
+\subsection{Repeated tweets}
+Deepening into tweet text exploration we perceived identical tweets from different users that have not been retweeted. In other words, different users posted the exact same text several times. In figure \ref{retweets:2} we plotted the distribution of how many repetitions we have from a tweet excluding retweets. We see a high concentration of repeated tweets below 50 repetitions and then a small concentration again around 250 repetitions.A first look at the twee text suggests that more frequent tweets seem to be talking about self-aid and motivation sentences whereas the less frequent tweets seem to be news repeated by the news providers.
 
-\begin{figure}[H]
-\includegraphics[width=4in]{wordcloud3}
-\centering
-\caption{Wordcloud for news providers}
-\label{wordcloud:3}
-\end{figure}
+A possible explanation for this scenario is that content amplifiers or bots don't have a retweet ratio of exactly 0. Which means that, at some point, this bots have "created" some content. Therefore, they make use of a pool of motivation sentences to "create" tweets so they don't arouse suspicion.
+This is a particularly notable results since the repeated tweets are almost 30\% of the "original" created content.
+
+\subsection{Hashtags}
+As explained previously, hashtags are relevant when analysing tweeter data since they perform as a good proxy for the topic of tweet. In figure \ref{wordcloud:4} and \ref{wordcloud:5} we plot most repeated hashtags among all the available data for left and right partisans. In general, users with different political convictions don't share hashtags. This is because, usually, a hashtag has inherently a political belief behind and using it presuppose that the user is in favor of that belief. There is one particular exception with the hashtag "BlackLivesMatter" which is relevant in both groups. Apart from that, we do no see any other important information for our study.
 
 
 \section{Results}
-
 
 \begin{center}
 \begin{table}[H]
@@ -308,6 +311,13 @@ billclinton  &   0.717722\\
 \end{table}
 \end{center}
 
+\begin{figure}[t]
+\includegraphics[width=7in]{heatmap_cluster_similarity}
+\centering
+\caption{Between-cluster distances}
+\label{distance:1}
+\end{figure}
+
 \section{Discussion}
 
 %_______________________________________________________________________________________________________%
@@ -318,8 +328,44 @@ billclinton  &   0.717722\\
 \setcitestyle{authoryear}
 \bibliography{textmining}
 
+\clearpage
 
 \section{Annex}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+Jenn\_Abrams	&	0.0231\\
+SouthLoneStar	&	0.0375\\
+USA\_Gunslinger&	0.0770\\
+patriototus		&	0.0033\\
+redlanews		&	0.0038\\
+ \hline
+\end{tabular}
+\caption{'Right' cluster retweet ratios among content providers}
+\label{table:1}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Twitter user name & Retweet ratio \\
+ \hline
+BleepThePolice &   0.6768 \\
+Blk\_Voice       &  0.0163 \\
+KaniJJackson   &   0.2655 \\
+LaChristie  &      0.0986 \\
+gloed\_up       &   0.4606 \\
+wokeluisa     &    0.0822 \\
+ \hline
+\end{tabular}
+\caption{'Left' cluster retweet ratios among content providers}
+\label{table:2}
+\end{table}
+\end{center}
 
 
 \begin{center}
@@ -367,6 +413,27 @@ wokeluisa	& APSA. \#Blackexcellence. Political science major \\
 \end{table}
 \end{center}
 
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud2}
+\centering
+\caption{Wordcloud for 'right' cluster}
+\label{wordcloud:1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud1}
+\centering
+\caption{Wordcloud for 'left' cluster}
+\label{wordcloud:2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud3}
+\centering
+\caption{Wordcloud for news providers}
+\label{wordcloud:3}
+\end{figure}
+
 
 \begin{figure}[H]
 \includegraphics[width=5in]{wordcloud4}
@@ -392,22 +459,29 @@ wokeluisa	& APSA. \#Blackexcellence. Political science major \\
 \begin{figure}[H]
 \includegraphics[width=6in]{embedding_liberals_conservatives}
 \centering
-\caption{Similarity of embedding}
+\caption{Similarity of embedding: Liberals and Conservatives}
 \label{embedding:1}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=6in]{embedding_clinton_trump}
 \centering
-\caption{Similarity of embedding}
+\caption{Similarity of embedding: Clinton and Trump}
 \label{embedding:2}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=6in]{embedding_black_white}
 \centering
-\caption{Similarity of embedding}
+\caption{Similarity of embedding: Black and White}
 \label{embedding:3}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_fake_true}
+\centering
+\caption{Similarity of embedding: Fake and True}
+\label{embedding:4}
 \end{figure}
 
 \begin{center}
