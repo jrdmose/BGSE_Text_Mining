@@ -12,24 +12,24 @@
 \setstretch{1.5}
 \usepackage{multirow}
 %\DeclareMathSizes{12}{14}{10}{10}
-\usepackage[margin=2.5cm]{geometry}    % How to set margins - optimized for 2.5cm      
+\usepackage[margin=2.5cm]{geometry}    % How to set margins - optimized for 2.5cm
 
 % See geometry.pdf to learn the layout options. There are lots.
-\geometry{a4paper}                   			% ... or a4paper or a5paper or ... 
+\geometry{a4paper}                   			% ... or a4paper or a5paper or ...
 \usepackage{enumitem}
 \usepackage{mathtools}
 %\geometry{landscape}                		% Activate for rotated page geometry
 \usepackage[parfill]{parskip}    			% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}						% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-% TeX will automatically convert eps --> pdf in pdflatex	
-\usepackage{flafter}			
+% TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{flafter}
 \usepackage{setspace}
 %\linespread{1.5}
 \usepackage[font={}]{caption}
 \usepackage[bottom]{footmisc}
 \usepackage[capposition=top]{floatrow}   %figure notes
 \usepackage{lscape}
-%math packages 
+%math packages
 \usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{graphicx,epsf,subfigure}
@@ -47,7 +47,7 @@
 \newcommand{\x}{\textsc{\textbf{x}}}
 \newcommand{\xx}{\textsc{x}}
 
-%add figure 
+%add figure
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \usepackage{rotating}
 \usepackage{pdflscape}
@@ -61,7 +61,7 @@
 \usepackage{longtable}
 \usepackage{hyperref}
 \usepackage{tablefootnote}
-\usepackage{lscape} 
+\usepackage{lscape}
 \usepackage{animate}
 
 \renewcommand{\contentsname}{Table of Contents} % change name from Contents to Table of Contents
@@ -100,7 +100,7 @@
 
 \begin{abstract}
 \small{
-Abstract to be written here. 
+Abstract to be written here.
 }
 \end{abstract}
 
@@ -120,20 +120,20 @@ Textmining \sep Russian Interference \sep Polarization  \\ \vspace{0.3cm}
 
 In this report we analyze efforts by the Russian Internet Research Agency (IRA) to polarize the American public on social media / twitter in the context of the 2016 presidential election. The two front-running candidates in the 2016 election bore starkly different promise for the Russian government. Whereas Hillary Clinton had already built her profile as strongly critic of Russian foreign policy during her tenure as Secretary of State, Donald Trump offered the opportunity for Russia to push American politics into a more favorable space for Russian interests. In the recently published Mueller report it has been alleged that by polarizing the American society, the Russians attempted to aid Trump's election. Given Trump's more radical policy positions, it was likely easier for Trump to increase his vote at the extremes of the political spectrum than at the centre, and polarization would therefore have been helpful for his election. Polarization might also have been a goal of the Russians in and of itself, by weakening American influence in world politics, and lowering faith in democratic vs autocratic political systems.
 
-Any democratic government has a strong interest in counteracting such foreign interference in the national debate that can destabilise the democratic process. Therefore, there is strong policy justification for research into measures that help to identify polarization in twitter data. In this report, we attempt to do just that. We study a dataset of nearly 3 million tweets by user accounts linked to the IRA and use textmining techniques to uncover targeted efforts to polarize the discussion. To identify polarization, we propose to study the clusteredness of tweets projected onto a vector space created using a word embedding algorithm. We consider a corpus to contain polarizing tweets if the clusters that we find feature data points that have strong similarity within and low similarity across clusters. We measure this similarity using cosine distance of the word embedding vectors, and take the average pairwise distance between clusters as an aggregate measure for polarization. 
+Any democratic government has a strong interest in counteracting such foreign interference in the national debate that can destabilise the democratic process. Therefore, there is strong policy justification for research into measures that help to identify polarization in twitter data. In this report, we attempt to do just that. We study a dataset of nearly 3 million tweets by user accounts linked to the IRA and use textmining techniques to uncover targeted efforts to polarize the discussion. To identify polarization, we propose to study the clusteredness of tweets projected onto a vector space created using a word embedding algorithm. We consider a corpus to contain polarizing tweets if the clusters that we find feature data points that have strong similarity within and low similarity across clusters. We measure this similarity using cosine distance of the word embedding vectors, and take the average pairwise distance between clusters as an aggregate measure for polarization. TO BE ADAPTED TO WHAT HAS BEEN DONE
 
-We acknowledge that clusters in our dataset cannot be expected to be perfectly separated, or bunched into a specific number of clusters. To build up credibility among the American public, IRA tweets needed to build a history of realistic tweets to increase followers and be taken seriously. We hence expect the dataset to feature a lot of noise, but still show larger across-cluster distance than the average Twitter corpus. In our empirical analysis, we study polarisation as evidenced by clusteredness both for the corpus as a whole and for individual topics as identified by hashtags. Our results show that XXXXXX
+We acknowledge that clusters in our dataset cannot be expected to be perfectly separated, or bunched into a specific number of clusters. To build up credibility among the American public, IRA tweets needed to build a history of realistic tweets to increase followers and be taken seriously. We hence expect the dataset to feature a lot of noise, but still show larger across-cluster distance than the average Twitter corpus. In our empirical analysis, we study polarisation as evidenced by clusteredness both for the corpus as a whole. Our results show that XXXXXX
 
 In the second section of this report, we clarify the likely political motivation of the Russian government to engage in a polarization strategy. The third section introduces our methodology. The fourth section describes the data and our pre-processing steps. The fifth section reports the results, and the sixth section discusses our conclusions.
 
 \section{The Strategy behind Russian Social Media Efforts}\label{literature}
 
-In order to identify efforts to polarize US politics through social media, we need to understand the strategies behind such efforts. In particular, it is crucial to know why Russia would use such strategies, and how they could potentially influence domestic and foreign politics in the US. 
+In order to identify efforts to polarize US politics through social media, we need to understand the strategies behind such efforts. In particular, it is crucial to know why Russia would use such strategies, and how they could potentially influence domestic and foreign politics in the US.
 
-Unlike the predicted "End of History", (\cite{fukuyama1989end}) conflicts between liberal democracies in the west and Russia reemerged in the beginning of the 21st century. Following the fall of the Soviet Union, instead of integrating into the West, Russia tried to reestablish it's position as a superpower. Issues like the NATO integration of eastern European countries or the establishment of a missile defense shield in easter Europe lead to rising tensions and mistrust of Russian leaders towards the West (sources). These tensions became more pronounced in the beginning of the second decade of the 21st century, with hot conflicts in the middle East, most notably Syria, and the Maidan Revolution in Ukraine. At the heart of these conflicts were and still are diverging interests of the United States and Russia. Be it the integration of the Ukraine into the European Union (EU) and NATO or the Russian support for the Syrian leader Assad. These points of conflict can be seen as a motivator for the Russian interference in the 2016 US presidential elections. 
+Unlike the predicted "End of History", (\cite{fukuyama1989end}) conflicts between liberal democracies in the west and Russia reemerged in the beginning of the 21st century. Following the fall of the Soviet Union, instead of integrating into the West, Russia tried to reestablish it's position as a superpower. Issues like the NATO integration of eastern European countries or the establishment of a missile defense shield in easter Europe lead to rising tensions and mistrust of Russian leaders towards the West (sources). These tensions became more pronounced in the beginning of the second decade of the 21st century, with hot conflicts in the middle East, most notably Syria, and the Maidan Revolution in Ukraine. At the heart of these conflicts were and still are diverging interests of the United States and Russia. Be it the integration of the Ukraine into the European Union (EU) and NATO or the Russian support for the Syrian leader Assad. These points of conflict can be seen as a motivator for the Russian interference in the 2016 US presidential elections.
 
 In the aftermath of the 2016 elections, the US intelligence community published a number of assessments of the Russian strategy. Most notably, the Central Intelligence Agency (CIA), the Federal Bureau of Investigation (FBI) and the National Security Agency (NSA) published an assessment of Russian activities, stating that the goals of Russia were to weaken public faith in the US democratic process and denigrate presidential candidate Hillary Clinton (\cite{office2017assessing}). The idea behind these efforts was to undermine the US-led liberal democratic order, posing a threat to Putin's regime. In particular, Putin saw a potential presidency of Hillary Clinton as a threat to his ambitions in Ukraine and Syria, due to Clinton's foreign policy positions as Secretary of State. Trump on the other hand was seen more friendly towards Russia and thus favoured over Clinton. As part of these efforts, Russia used social media networks like Facebook and Twitter, to promote radical discontent with US politics, polarize the discussion and denigrate Hillary Clinton. The report further states, that the Russian strategy changed over time. In the beginning, the goal was to undermine public institutions. However, with Clinton leading over Trump, the Russian efforts shifted towards the defamation of Clinton, trying to harm her electability and potential presidency. Interestingly, the report states that after Trump had won, the efforts to undermine public institutions stopped. The three intelligence agencies pick out the so called Internet Research Agency (IRA), as one of the main sources of these social media accounts. The IRA is described as a private agency with ties to the Russian government, engaging in targeted social influence efforts.
-The findings of the so-called Mueller investigation (\cite{mueller2019report}) support this assessment. According to the Mueller Report, the IRA carried out social media campaigns to amplify social discord in the US. In order to do so, Twitter accounts linked to the IRA tweeted on divisive US political and social issues, such as illegal immigration and racial injustice. According to \cite{mueller2019report}, the IRA used social media accounts in two manners. Some accounts were designed around fictitious US personas, posting original content on divisive topics, promoting radical ideas and denigrating or promoting political candidates. Other accounts weren't used for original content, but rather to promote and amplify the impact of the "original" content. Some of the  accounts posting such content had a large follower share, such as \@TEN\_GOP, an account pretending to be related to the Tennessee Republican Party. \@TEN\_GOP was clearly used to promote polarization by pushing extreme content and promoting Donald Trump. Some tweets included:  
+The findings of the so-called Mueller investigation (\cite{mueller2019report}) support this assessment. According to the Mueller Report, the IRA carried out social media campaigns to amplify social discord in the US. In order to do so, Twitter accounts linked to the IRA tweeted on divisive US political and social issues, such as illegal immigration and racial injustice. According to \cite{mueller2019report}, the IRA used social media accounts in two manners. Some accounts were designed around fictitious US personas, posting original content on divisive topics, promoting radical ideas and denigrating or promoting political candidates. Other accounts weren't used for original content, but rather to promote and amplify the impact of the "original" content. Some of the  accounts posting such content had a large follower share, such as \@TEN\_GOP, an account pretending to be related to the Tennessee Republican Party. \@TEN\_GOP was clearly used to promote polarization by pushing extreme content and promoting Donald Trump. Some tweets included:
 
 \begin{itemize}
 
@@ -145,17 +145,17 @@ The findings of the so-called Mueller investigation (\cite{mueller2019report}) s
 
 \end{itemize}
 
-The strategy clearly worked, since tweets of the IRA we're picked up by major news outlets in the US and thus shaped at least daily discussions (\cite{mueller2019report}). We can thus summarize the Russian strategy as follows: Polarize the political discussion in the US, undermine Clintons authority and electability and promote Trump. 
+The strategy clearly worked, since tweets of the IRA we're picked up by major news outlets in the US and thus shaped at least daily discussions (\cite{mueller2019report}). We can thus summarize the Russian strategy as follows: Polarize the political discussion in the US, undermine Clintons authority and electability and promote Trump.
 
-Now the question remains how these strategies, if successful, would affect US foreign policy, in particular towards Russia. In the subsequent analysis, we'll focus on the idea of polarization. \cite{fiorina2008political} define polarization as the simultaneous presence of opposing or conflicting principles, tendencies or points of view. In a quantitative manner, polarization can be seen as an increase of variance of ideas and attitudes towards poltical questions. \cite{dimaggio1996have} argue, that this reduces the probability of group formation at the center of the political spectrum and increases the formation of groups with irreconcilable preferences. This can have peculiar effects on domestic and foreign policy. \cite{beinart2008politics} argues that polarization leads to a weakened international position of the US. First, international endeavours such as the promotion of trade agreements, UN resolutions or even military campaigns crucially depend on domestic support. Without domestic support, international allies of the US discount promises, while the US appears weak towards enemies \citep{beinart2008politics}. \cite{schultz2017perils} supports these findings. He argues that domestic political polarization leads to three issues. First, it is more difficult to get bipartisan support for risky undertakings. Second, it gets harder to agree on lessons from failures, complicating efforts to learn. And lastly, the risk of dramatic policy swings complicates the ability to make long term commitments. The overall effect of polarization can thus be summarised as follows: A polarized society is caught up with fighting against itself. It can't 
-reconcile large differences to find a common foreign policy strategy. 
+Now the question remains how these strategies, if successful, would affect US foreign policy, in particular towards Russia. In the subsequent analysis, we'll focus on the idea of polarization. \cite{fiorina2008political} define polarization as the simultaneous presence of opposing or conflicting principles, tendencies or points of view. In a quantitative manner, polarization can be seen as an increase of variance of ideas and attitudes towards poltical questions. \cite{dimaggio1996have} argue, that this reduces the probability of group formation at the center of the political spectrum and increases the formation of groups with irreconcilable preferences. This can have peculiar effects on domestic and foreign policy. \cite{beinart2008politics} argues that polarization leads to a weakened international position of the US. First, international endeavours such as the promotion of trade agreements, UN resolutions or even military campaigns crucially depend on domestic support. Without domestic support, international allies of the US discount promises, while the US appears weak towards enemies \citep{beinart2008politics}. \cite{schultz2017perils} supports these findings. He argues that domestic political polarization leads to three issues. First, it is more difficult to get bipartisan support for risky undertakings. Second, it gets harder to agree on lessons from failures, complicating efforts to learn. And lastly, the risk of dramatic policy swings complicates the ability to make long term commitments. The overall effect of polarization can thus be summarised as follows: A polarized society is caught up with fighting against itself. It can't
+reconcile large differences to find a common foreign policy strategy.
 
-Consequently, Russia's global standing would greatly increase from a polarization of US politics. Actually, we can already see these effects in motion, especially in Syria. The US failed to gather international support for UN resolutions and seems to have no clear strategy, while Russia continues pushing its ally Assad \citep{bolan_2019}. Interestingly, the other strategies described by Martin and Shapiro, such as defamation and persuasion can also be seen as tools of polarization. 
+Consequently, Russia's global standing would greatly increase from a polarization of US politics. Actually, we can already see these effects in motion, especially in Syria. The US failed to gather international support for UN resolutions and seems to have no clear strategy, while Russia continues pushing its ally Assad \citep{bolan_2019}. Interestingly, the other strategies described by Martin and Shapiro, such as defamation and persuasion can also be seen as tools of polarization.
 
-Having discussed the effects of polarization, we can now try to identify Russian polarization efforts through social media. 
+Having discussed the effects of polarization, we can now try to identify Russian polarization efforts through social media.
 
 \section{Methodology}
-Informally, polarization in society can be defined as a situation where we have high within-group similarity, and low across-group similarity. More formal measures have been proposed, for example by \cite{duclos2004polarization}, that relate specific characteristics of density distributions to polarization, and provide a more thorough treatment of the concept. But for our purposes the informal definition shall suffice. More importantly, we note the close relationship between polarization and clustering techniques in the field of unsupervised learning, or community detection in the field of network science. Clustering techniques in the field of unsupervised learning aim to detect data points that naturally belong together because they are close by some measure in some higher dimensional space, and that are far from other data points by that same measure. Similarly, in network science we try to detect communities of nodes that display high similarity in terms of their links. Nodes that form a community share many common friends, and they share very few common friends with nodes outside of their community. Essentially, polarization is the social science term to describe clustering of data points. This means that to detect polarization we can employ unsupervised learning methods to detect clusters, or network science tools to detect communities. 
+Informally, polarization in society can be defined as a situation where we have high within-group similarity, and low across-group similarity. More formal measures have been proposed, for example by \cite{duclos2004polarization}, that relate specific characteristics of density distributions to polarization, and provide a more thorough treatment of the concept. But for our purposes the informal definition shall suffice. More importantly, we note the close relationship between polarization and clustering techniques in the field of unsupervised learning, or community detection in the field of network science. Clustering techniques in the field of unsupervised learning aim to detect data points that naturally belong together because they are close by some measure in some higher dimensional space, and that are far from other data points by that same measure. Similarly, in network science we try to detect communities of nodes that display high similarity in terms of their links. Nodes that form a community share many common friends, and they share very few common friends with nodes outside of their community. Essentially, polarization is the social science term to describe clustering of data points. This means that to detect polarization we can employ unsupervised learning methods to detect clusters, or network science tools to detect communities.
 
 In this report we aim to make use of this insight by attempting to identify clusters in the body of tweets which could provide evidence of Russian efforts to polarize the American society ahead of the 2016 presidential election. A priori, the most natural clusters we would expect to emerge are two: one cluster pulling the debate towards the extreme left, and another cluster pulling the debate towards the extreme right. However, this would not be the only type of clustering that would yield evidence for polarization. Russian polarization efforts may also have been organized along topic lines, creating two or more clusters within a chosen set of topics. Further, any effort to polarize the debate would have to be hidden among a cloud of noise in order to conceal orchestrated nature of the effort, and to appear like a body of real tweets to the American twitter users. Therefore, we do not expect the clusters to yield perfect class separation, or yield very clear separation of opinions on topics. In support of our hypothesis we would expect that, compared to a non-orchestrated discussion on Twitter, the IRA tweet corpus shows more pronounced clustering. Similarly, the level of clustering should be comparable to what are known to be very polarized debates, for example the discussion among fans ahead of a football match of two rival teams.
 
@@ -166,10 +166,8 @@ The space that we measure the cosine distance in can be defined by any projectio
 \section{Data}
 To identify efforts by Russia to polarize public opinion on social media ahead of the 2016 US presidential election, we make use of a dataset of nearly 3 million tweets by 3077 different English-language user accounts linked to the Internet Research Agency and made publicly available by Twitter covering several years leading up to and after the election period.
 
-\subsection{Data preprocessing}
-    
 Preprocessing of the tweet corpus is of capital importance when using natural language processing techniques where different approaches in text cleaning/filtering can lead to starkly different results during model training. In this section we are going to describe and justify the steps we followed to clean our data.
-    
+
 \subsection{Filtering}
 
 In the data set, we find tweets in different alphabets: latin, cyrillic and arabic. The first step we take is to remove all tweets that do not use the latin alphabet. We keep English tweets only. Besides not being able to extract any meaning from other alphabets without translation, having different languages/alphabets in the corpus can lead to wrong algorithm output and false vocabularies. Further, since the main target is to show the polarization caused by these tweets in the American society, we believe English is the most relevant language for this objective. We also drop users that have reported a non US location and/or that don't have their user description or account language in English. Supposedly, having any of the features described above would look suspicious to the "true" American users who these accounts aimed to influence leading to counterproductive effects. After removing all these tweets from our data, we keep roughly 85\% of the original data set, which means 2.5 million tweets.
@@ -182,11 +180,11 @@ Another important cleaning decision regards hashtags. Hashtags provide useful in
 
 \subsection{Further preprocessing}
 
-A classical approach for data cleaning in text-mining is to follow the Stop Words - Stem - Lemmatize - Tokenize pipeline. However, in the case of short texts such as tweets, some recent contributions \cite{preprocessing} have argued that lemmatization and stemming lead to worse performance in terms of sentiment analysis, while feature reservation, negation transformation and repeated letters normalization improves it. Other references such as \cite{Hollink2004} support the view that lemmatizing and stemming does not improve performance of the algorithms significantly. One has to keep in mind that any morphological pre-processing of the training data reduces the amount of information that model can obtain from the corpus, which can create unnecessary noise making some sentences ambiguous. Therefore, since there is no clear evidence that we can improve performance using lemmatization and stemming, we prefer not to add this layer of complexity to the problem and stick to the cleaned tokenized raw data. 
+A classical approach for data cleaning in text-mining is to follow the Stop Words - Stem - Lemmatize - Tokenize pipeline. However, in the case of short texts such as tweets, some recent contributions \cite{preprocessing} have argued that lemmatization and stemming lead to worse performance in terms of sentiment analysis, while feature reservation, negation transformation and repeated letters normalization improves it. Other references such as \cite{Hollink2004} support the view that lemmatizing and stemming does not improve performance of the algorithms significantly. One has to keep in mind that any morphological pre-processing of the training data reduces the amount of information that model can obtain from the corpus, which can create unnecessary noise making some sentences ambiguous. Therefore, since there is no clear evidence that we can improve performance using lemmatization and stemming, we prefer not to add this layer of complexity to the problem and stick to the cleaned tokenized raw data.
 
 \subsection{Data exploration}
-    
-According to \cite{mueller2019report} Russia deployed a complex strategy to influence American elections through an army of troll tweeter accounts. Our hypothesis is that this was done via three main channels: politically active users, fake news accounts and bot accounts. We will call the first two channels the content providers and the third channel the content amplifier. The politically active accounts are well identified in the reports by the American intelligence agencies and also by their user descriptions. The news providers consist in a few number of users that attempted to impersonate local news agencies and spread both true and fake news. The idea behind is that, in order to get a loyal audience, they had to build up credibility providing real news for a wide range of topics. However, among these "innocent" news they also published tweets with highly polarizing socio-political content. These content provision interventions appear to then have been complemented using bot twitter users to amplify the content from content providers via retweets. 
+
+According to \cite{mueller2019report} Russia deployed a complex strategy to influence American elections through an army of troll tweeter accounts. Our hypothesis is that this was done via three main channels: politically active users, fake news accounts and bot accounts. We will call the first two channels the content providers and the third channel the content amplifier. The politically active accounts are well identified in the reports by the American intelligence agencies and also by their user descriptions. The news providers consist in a few number of users that attempted to impersonate local news agencies and spread both true and fake news. The idea behind is that, in order to get a loyal audience, they had to build up credibility providing real news for a wide range of topics. However, among these "innocent" news they also published tweets with highly polarizing socio-political content. These content provision interventions appear to then have been complemented using bot twitter users to amplify the content from content providers via retweets.
 
 \subsection{Content creators vs content amplifiers}
 
@@ -207,7 +205,7 @@ As an exploratory step, we have checked the content providers' most frequent use
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Twitter user name & Retweet ratio \\
  \hline
 Jenn\_Abrams	&	0.0231\\
@@ -224,7 +222,7 @@ redlanews		&	0.0038\\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Twitter user name & Retweet ratio \\
  \hline
 BleepThePolice &   0.6768 \\
@@ -267,7 +265,7 @@ wokeluisa     &    0.0822 \\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Skip Gram - Word   &  Similarity \\
  \hline
 donald   &  0.896358\\
@@ -290,7 +288,7 @@ rnc   &  0.725931\\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Skip Gram - Word   &  Similarity \\
  \hline
 hillary   &  0.935136\\
@@ -311,7 +309,7 @@ billclinton  &   0.717722\\
 \end{center}
 
 \section{Discussion}
- 
+
 %_______________________________________________________________________________________________________%
 %BIBLIOGRAPHY
 %_______________________________________________________________________________________________________%
@@ -326,7 +324,7 @@ billclinton  &   0.717722\\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ l l } 
+\begin{tabular}{ l l }
 Twitter user name & User description \\
  \hline
 USA\_Gunslinger &	Truth is strong, and sometime or other will prevail! \\
@@ -350,7 +348,7 @@ Jenn\_Abrams &	Calm down, I'm not pro-Trump. I am pro-common sense. \\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ l l } 
+\begin{tabular}{ l l }
 Twitter user name & User description \\
  \hline
 Blk\_Voice & 	Activist. Feminist. Celebrating and highlighting Black excellence. \\
@@ -359,7 +357,7 @@ KaniJJackson &	Follow the example set by Mrs Obama; peace, love, acceptance \\
 LaChristie	& Progressive. Activist. Warrior. Inspiration. \#Resistance \\
 gloed\_up &	No black person is ugly \#BRONZE \#BlackLivesMatter \\
 &  \#BlackToLive \\
-BleepThePolice	 & For a second at least, I'm resurrecting the peace \#Blacktivist \\ 
+BleepThePolice	 & For a second at least, I'm resurrecting the peace \#Blacktivist \\
 & \#BlackLivesMatter \\
 wokeluisa	& APSA. \#Blackexcellence. Political science major \\
  \hline
@@ -414,7 +412,7 @@ wokeluisa	& APSA. \#Blackexcellence. Political science major \\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Skip Gram - Word   &  Similarity \\
  \hline
 liberallogic   &  0.760208 \\
@@ -436,7 +434,7 @@ gopdebatesc   &  0.668273\\
 
 \begin{center}
 \begin{table}[H]
-\begin{tabular}{ c c } 
+\begin{tabular}{ c c }
 Skip Gram - Word   &  Similarity \\
  \hline
 republican    & 0.736253 \\
