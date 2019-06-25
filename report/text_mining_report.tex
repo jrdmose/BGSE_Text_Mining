@@ -54,7 +54,7 @@
 \usepackage{hyperref}
 \usepackage[round]{natbib}
 \usepackage{soul}
-\graphicspath{ {figures/} }
+\graphicspath{ {../img/} }
 
 
 \def\bibsection{\section{References}} %%% Make "References" appear before bibliography
@@ -190,17 +190,23 @@ According to \cite{mueller2019report} Russia deployed a complex strategy to infl
 
 \subsection{Content creators vs content amplifiers}
 
-In order to verify the underlying phenomena introduced previously we plotted in figure XXXX the percentage of retweets per user. A user with high percentage of retweets will be basically retweeting information from other users whereas a user with low percentage will be basically only creating content. 
+In order to verify the underlying phenomena introduced previously we plotted the percentage of retweets per user in figure \ref{retweets:1}. We find that there is a clear separation of roles: the amplifier is a user with a high percentage of retweets only retweets information from other users whereas the content creator is a user with low percentage only creates content.
 
-PLOT: /retweets
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{retweets}
+\centering
+\caption{Retweet ratios}
+\label{retweets:1}
+\end{figure}
 
-In figure on the upper right corner, we see a high concentration of users that, although having a big number of tweets on the data base, they hardly ever produce any content. Whereas in the other extreme, we have users that produce a reasonably amount of tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day!
+In the upper right corner of figure  \ref{retweets:1}, we see a high concentration of users that, although having a large total number of tweets, hardly ever produce any content. On the other extreme we have users that produce a reasonable amount of original content tweets but hardly ever retweet. We identify an outlier that has more than 150.000 tweets, which means that over 5 years of data, this user was retweeting an average of 80 tweets per day!
 
-We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below. Also, as we can see in table \ref{table:3} and \ref{table:4}, their user description already gives a clear idea of their political beliefs.
-Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
+We identified the most politically active accounts and it seems that, as expected, all of them fit in the content provider category. Find the retweet ratio of these users in table \ref{table:1} and \ref{table:2} below. Also, as we can see in table \ref{table:3} and \ref{table:4} in the Annex, that their user description already gives a clear idea of their political beliefs. Regarding news providers, having an average of retweet ratio of 0.01 we can also confirm that they fit in the content provider category.
+
+As an exploratory step, we have checked the content providers' most frequent used words. In figure \ref{wordcloud:1} we clearly see the preferences of right-wing partisans, mainly talking about Obama and religion related topics. In figure \ref{wordcloud:2} we can clearly see the topics left-wing partisans talk about. Note, for example, a considerable amount of anti-racism vocabulary. Finally, for news providers in figure \ref{wordcloud:3}, we cannot identify any more a political preference nor extreme vocabulary but just a normal vocabulary a news provider would use
 
 \begin{center}
-\begin{table}
+\begin{table}[H]
 \begin{tabular}{ c c } 
 Twitter user name & Retweet ratio \\
  \hline
@@ -217,7 +223,7 @@ redlanews		&	0.0038\\
 \end{center}
 
 \begin{center}
-\begin{table}
+\begin{table}[H]
 \begin{tabular}{ c c } 
 Twitter user name & Retweet ratio \\
  \hline
@@ -234,8 +240,92 @@ wokeluisa     &    0.0822 \\
 \end{table}
 \end{center}
 
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud2}
+\centering
+\caption{Wordcloud for 'right' cluster}
+\label{wordcloud:1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud1}
+\centering
+\caption{Wordcloud for 'left' cluster}
+\label{wordcloud:2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=4in]{wordcloud3}
+\centering
+\caption{Wordcloud for news providers}
+\label{wordcloud:3}
+\end{figure}
+
+
+\section{Results}
+
+
 \begin{center}
-\begin{table}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+donald   &  0.896358\\
+trumps   &  0.791140\\
+pres   &  0.770282\\
+feedly   &  0.762091\\
+illegitimate  &   0.755011\\
+president   &  0.742422\\
+trum   &  0.736769\\
+administration  &   0.728688\\
+donaldtrump   &  0.728006\\
+rnc   &  0.725931\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Trump}
+\label{table:5}
+\end{table}
+\end{center}
+
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+hillary   &  0.935136\\
+hillaryclinton   &  0.783674\\
+clintons &    0.781306\\
+hrc   &  0.765259\\
+campaign  &   0.741458\\
+sanders  &  0.738335\\
+emails   &  0.724602\\
+crookedhillary    & 0.723004\\
+hillarys   &  0.721376\\
+billclinton  &   0.717722\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Clinton}
+\label{table:6}
+\end{table}
+\end{center}
+
+\section{Discussion}
+ 
+%_______________________________________________________________________________________________________%
+%BIBLIOGRAPHY
+%_______________________________________________________________________________________________________%
+\pagebreak
+\bibliographystyle{agsm}
+\setcitestyle{authoryear}
+\bibliography{textmining}
+
+
+\section{Annex}
+
+
+\begin{center}
+\begin{table}[H]
 \begin{tabular}{ l l } 
 Twitter user name & User description \\
  \hline
@@ -259,7 +349,7 @@ Jenn\_Abrams &	Calm down, I'm not pro-Trump. I am pro-common sense. \\
 \end{center}
 
 \begin{center}
-\begin{table}
+\begin{table}[H]
 \begin{tabular}{ l l } 
 Twitter user name & User description \\
  \hline
@@ -280,19 +370,91 @@ wokeluisa	& APSA. \#Blackexcellence. Political science major \\
 \end{center}
 
 
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud4}
+\centering
+\caption{Wordcloud 4}
+\label{wordcloud:4}
+\end{figure}
 
-\section{Results}
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud5}
+\centering
+\caption{Wordcloud 5}
+\label{wordcloud:5}
+\end{figure}
 
-\section{Discussion}
+\begin{figure}[H]
+\includegraphics[width=5in]{wordcloud6}
+\centering
+\caption{Wordcloud 6}
+\label{wordcloud:6}
+\end{figure}
 
- 
-%_______________________________________________________________________________________________________%
-%BIBLIOGRAPHY
-%_______________________________________________________________________________________________________%
-\pagebreak
-\bibliographystyle{agsm}
-\setcitestyle{authoryear}
-\bibliography{textmining}
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_liberals_conservatives}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_clinton_trump}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=6in]{embedding_black_white}
+\centering
+\caption{Similarity of embedding}
+\label{embedding:3}
+\end{figure}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+liberallogic   &  0.760208 \\
+nutshell   &  0.755933 \\
+liberals   &  0.723288\\
+msm   &  0.703458\\
+hypocrisy  &   0.688949\\
+communist  &   0.687983\\
+leftists  &   0.671862\\
+suppoers    & 0.671141\\
+libs   &  0.670767\\
+gopdebatesc   &  0.668273\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Liberal}
+\label{table:7}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\begin{tabular}{ c c } 
+Skip Gram - Word   &  Similarity \\
+ \hline
+republican    & 0.736253 \\
+conservatives    & 0.693829\\
+scprimary &    0.680811\\
+ gop   &  0.673089\\
+oppose   &  0.669254\\
+cruz  &   0.656088\\
+democratic  &   0.655370\\
+democrats   &  0.654107\\
+ convention  &   0.653456\\
+endorses  &   0.648152\\
+ \hline
+\end{tabular}
+\caption{Most similar words to Conservative}
+\label{table:8}
+\end{table}
+\end{center}
 
 
 \end{document}
